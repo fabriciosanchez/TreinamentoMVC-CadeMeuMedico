@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace Exemplo2_CadeMeuMedico.Controllers
 {
-    public class PrincipalController : Controller
+    public class UsuariosController : Controller
     {
-        // GET: Principal
-        public ActionResult Index()
+        // GET: Usuarios
+        public ActionResult Login()
         {
             return View();
         }
