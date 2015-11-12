@@ -38,7 +38,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -92,7 +102,24 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <EntityDeploy Include="Models\ModeloCadeMeuMedico.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloCadeMeuMedico.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModeloCadeMeuMedico.edmx.diagram">
+      <DependentUpon>ModeloCadeMeuMedico.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Models\ModeloCadeMeuMedico.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloCadeMeuMedico.edmx</DependentUpon>
+      <LastGenOutput>ModeloCadeMeuMedico.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModeloCadeMeuMedico.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloCadeMeuMedico.edmx</DependentUpon>
+      <LastGenOutput>ModeloCadeMeuMedico.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
@@ -108,6 +135,33 @@
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cidades.cs">
+      <DependentUpon>ModeloCadeMeuMedico.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Especialidades.cs">
+      <DependentUpon>ModeloCadeMeuMedico.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Medicos.cs">
+      <DependentUpon>ModeloCadeMeuMedico.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModeloCadeMeuMedico.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloCadeMeuMedico.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModeloCadeMeuMedico.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloCadeMeuMedico.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModeloCadeMeuMedico.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloCadeMeuMedico.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Usuarios.cs">
+      <DependentUpon>ModeloCadeMeuMedico.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -125,7 +179,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
