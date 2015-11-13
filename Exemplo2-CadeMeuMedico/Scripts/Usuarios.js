@@ -14,7 +14,7 @@
             success: function (dados) {
                 if (dados.OK) {
                     $("#status").html(dados.Mensagem)
-                    setTimeout(function () { window.location.href = "/Home/Index" }, 5000);
+                    setTimeout(function () { window.location.href = "/Sistema/Index" }, 5000);
                     $("#status").show();
                 }
                 else {
