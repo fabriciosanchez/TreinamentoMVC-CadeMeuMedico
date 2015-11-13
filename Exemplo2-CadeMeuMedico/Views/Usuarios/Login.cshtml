@@ -2,8 +2,10 @@
     ViewBag.Title = "Login";
 }
 
-<div class="row" style="margin-top:60px;">
-
+<div class="row" style="margin-top:60px; text-align:center;">
+    
+    <div id="status" style="margin-bottom:30px;"></div>
+    
     <div class="col-md-4 col-md-offset-4">
 
         <div class="login-panel panel panel-default">
@@ -14,7 +16,7 @@
 
             <div class="panel-body">
 
-                <form name="FormLogin" method="post" action="Infra/Validacao.php" data-toggle="validator" role="form">
+                <form name="FormLogin" id="FormLogin" method="get" action="javascript:function()" data-toggle="validator" role="form">
                     <fieldset>
                         <div class="form-group">
                             <input class="form-control" placeholder="Usuário" name="usuario" id="usuario" type="text" maxlength="30" autofocus required>
@@ -37,5 +39,4 @@
         </div>
     </div>
 </div>
-
 

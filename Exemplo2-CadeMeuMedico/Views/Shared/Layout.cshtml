@@ -30,7 +30,7 @@
                         @Html.ActionLink("Principal", "Index", "Principal")
                     </li>
                     <li>
-                        @Html.ActionLink("Acesso restrito", "Login", "Usuarios", new { @id = "ItemAcessoRestrito" })
+                        @Html.ActionLink("Acesso restrito", "Login", "Usuarios")
                     </li>
                 </ul>
             </div>
@@ -43,6 +43,7 @@
     
     <script src="@Url.Content("~/Scripts/jquery-2.1.4.min.js")"></script>
     <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/Usuarios.js")"></script>
     @RenderSection("script", required: false)
 
 </body>
