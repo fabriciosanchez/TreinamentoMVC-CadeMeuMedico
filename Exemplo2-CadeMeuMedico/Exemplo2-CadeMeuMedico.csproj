@@ -134,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\PrincipalController.cs" />
     <Compile Include="Controllers\SistemaController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
@@ -179,6 +180,7 @@
     <Content Include="Views\Principal\Index.cshtml" />
     <Content Include="Views\Usuarios\Login.cshtml" />
     <Content Include="Views\Sistema\Index.cshtml" />
+    <Content Include="Views\Usuarios\Sair.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -188,6 +190,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

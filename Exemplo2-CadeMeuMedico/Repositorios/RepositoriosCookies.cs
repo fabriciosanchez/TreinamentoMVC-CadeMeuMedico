@@ -7,13 +7,15 @@ namespace Exemplo2_CadeMeuMedico.Repositorios
 {
     public class RepositoriosCookies
     {
-        public static void RegistraCookieAutenticacao(long IDUsuario)
+        public static void RegistraCookieAutenticacao(long IDUsuario, string NomeUsuario)
         {
             //Criando um objeto cookie
             HttpCookie UserCookie = new HttpCookie("UserCookieAuthentication");
 
             //Setando o ID do usuário no cookie
             UserCookie.Values["IDUsuario"] = Repositorios.RepositorioCriptografia.Criptografar(IDUsuario.ToString());
+            UserCookie.Values["StatusLogon"] = Repositorios.RepositorioCriptografia.Criptografar("1"); // 1 logado.
+            UserCookie.Values["Nome"] = Repositorios.RepositorioCriptografia.Criptografar(NomeUsuario);
 
             //Definindo o prazo de vida do cookie
             UserCookie.Expires = DateTime.Now.AddDays(1);

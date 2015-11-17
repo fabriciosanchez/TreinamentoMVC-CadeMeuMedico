@@ -16,7 +16,7 @@ namespace Exemplo2_CadeMeuMedico.Filtros
             var Controller = FiltroDeContexto.ActionDescriptor.ControllerDescriptor.ControllerName;
             var Action = FiltroDeContexto.ActionDescriptor.ActionName;
 
-            if (Controller != "Home" || Action != "Index")
+            if ((Controller != "Home" || Action != "Index") || (Controller != "Usuarios" || Action != "Login"))
             {
                 if (RepositorioUsuarios.VerificaSeOUsuarioEstaLogado() == null)
                 {
