@@ -1,0 +1,118 @@
+﻿@model Exemplo2_CadeMeuMedico.Models.Medicos
+@{
+    ViewBag.Title = "Adicionar";
+}
+
+<h2>
+    <i class="glyphicon glyphicon-user"></i>
+    Novo Médico
+</h2>
+
+<p>Por favor, os campos abaixo que se fizerem necessários e ao final, clique em "Salvar".</p>
+
+<hr />
+
+@using (Html.BeginForm("Editar", "Medicos", FormMethod.Post, new { @class = "" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(m => m.IDMedico)
+
+    <fieldset>
+        <!-- Campo CRM -->
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CRM)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.CRM, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CRM)
+        </div>
+
+        <!-- Campo Nome -->
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Nome, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Nome)
+        </div>
+
+        <!-- Campo Endereço -->
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Endereco)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Endereco, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Endereco)
+        </div>
+
+        <!-- Campo Bairro -->
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Bairro)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Bairro, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Bairro)
+        </div>
+
+        <!-- Campo Email -->
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <!-- Campo atende por convênio -->
+        <div class="editor-label">
+            Atende por convênio?
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AtendePorConvenio, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.AtendePorConvenio)
+        </div>
+
+        <!-- Campo tem consultório -->
+        <div class="editor-label">
+            Possui consultório/clínica?
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TemClinica, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.TemClinica)
+        </div>
+
+        <!-- Campo Website -->
+        <div class="editor-label">
+            <label>Site</label>
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.WebsiteBlog, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.WebsiteBlog)
+        </div>
+
+        <!-- Campo Cidades -->
+        <div class="editor-label">
+            <label>Cidade</label>
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IDCidade", "-- Selecione --")
+            @Html.ValidationMessageFor(model => model.IDCidade)
+        </div>
+
+        <!-- Campo Especialidades -->
+        <div class="editor-label">
+            <label>Especialidade</label>
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IDEspecialidade", "-- Selecione --")
+            @Html.ValidationMessageFor(model => model.IDEspecialidade)
+        </div>
+        <br />
+        <p>
+            <button type="submit" class="btn btn-success">
+                <i class="glyphicon glyphicon-floppy-disk"></i>&nbsp; Salvar
+            </button>
+        </p>
+    </fieldset>
+}
